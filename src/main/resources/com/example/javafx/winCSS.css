@@ -1,0 +1,9 @@
+.miaClasse{
+    -fx-background-color: #000000;
+}
+
+.pulsante{
+    -fx-font-size: 20;
+    -fx-background-color: #6E2419;
+    -fx-text-fill: "white"; /*color*/
+}
