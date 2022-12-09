@@ -1,5 +1,8 @@
 package biblioteca;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class Bibliotecario extends Persona{
 
     private int matricola;
@@ -9,5 +12,27 @@ public class Bibliotecario extends Persona{
         super(nome, cognome, dataNascita);
         this.matricola = matricola;
         this.biblioteca = biblioteca;
+    }
+
+    public void setMatricola(int matricola) {
+        this.matricola = matricola;
+    }
+
+    public int getMatricola() {
+        return matricola;
+    }
+
+    public void setBiblioteca(int biblioteca) {
+        this.biblioteca = biblioteca;
+    }
+
+    public int getBiblioteca() {
+        return biblioteca;
+    }
+
+    public String toString(){
+        LocalDate dNascita = LocalDate.parse(getDataNascita());
+        String myFormattedDate = dNascita.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        return "Nome: " + getNome() + " Cognome: " + getCognome() + " Data di nascita: " + myFormattedDate;
     }
 }

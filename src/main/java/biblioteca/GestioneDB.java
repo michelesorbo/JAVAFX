@@ -76,4 +76,24 @@ public class GestioneDB {
         return testo;
     }
 
+    public String FirstUpper(String testo){
+        testo = testo.substring(0,1).toUpperCase() + testo.substring(1);
+        return testo;
+    }
+
+    public String LoginBibliotecario(String user, String pwd){
+        String matricola = "";
+
+        try {
+            rs = st.executeQuery("SELECT matricola FROM bibliotecari WHERE matricola = '"+user+"' AND pwd = '"+pwd+"'");
+            while (rs.next()){
+                matricola = rs.getString("matricola");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return matricola;
+    }
+
 }
