@@ -45,7 +45,7 @@ public class GestioneDB {
         }
     }
 
-    public static String getMd5Hash(String input)
+    public String getMd5Hash(String input)
     {
         try
         {
