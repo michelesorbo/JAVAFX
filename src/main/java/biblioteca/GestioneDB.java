@@ -70,4 +70,10 @@ public class GestioneDB {
         }
     }
 
+    public String formattaTesto(String testo){
+        testo = testo.toLowerCase();
+        testo = testo.trim();
+        return testo;
+    }
+
 }

@@ -1,15 +1,19 @@
 package biblioteca;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
+import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ResourceBundle;
 
-public class AdminController {
+public class AdminController implements Initializable {
    private GestioneDB DB = new GestioneDB();
     @FXML
     private TextField nome;
@@ -17,28 +21,28 @@ public class AdminController {
     @FXML
     private TextField cognome;
     @FXML
-    private TextField biblio;
+    private ChoiceBox<String> biblio;
     @FXML
     private PasswordField pwd;
     @FXML
     private DatePicker dataNascita;
+    @FXML
+    private Label msg;
+
 
     public void CreaBibliotecario(){
-     System.out.println(nome.getText());
-     System.out.println(cognome.getText());
-     System.out.println(pwd.getText());
-     System.out.println(biblio.getText());
-     System.out.println(biblio.getText());
+     String[] biblioteca = biblio.getValue().split(" ");
+
 
      String pwdMD5 = DB.getMd5Hash(pwd.getText()); //Codifico la password in MD5
 
      //SQL INSERT = INSERT INTO bibliotecari VALUES(inserie secondo l'ordine delle colonne)
-     String query = "INSERT INTO bibliotecari VALUES (null, '"+nome.getText()+"', '"+cognome.getText()+"', '"+pwdMD5+"', '"+dataNascita.getValue()+"', '"+biblio.getText()+"')";
+     String query = "INSERT INTO bibliotecari VALUES (null, '"+DB.formattaTesto(nome.getText())+"', '"+DB.formattaTesto(cognome.getText())+"', '"+pwdMD5+"', '"+dataNascita.getValue()+"', '"+biblioteca[0]+"')";
 
      if(DB.qUpdateInsert(query)){
-      System.out.println("Inserito con successo");
+      msg.setText("Bibliotecario inserito con successo");
      }else{
-      System.out.println("Errore inserimento");
+      msg.setText("Errore inserimento");
      }
 
     }
@@ -53,4 +57,20 @@ public class AdminController {
      String myFormattedDate = myDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
      System.out.println(myFormattedDate); //Stampo il risultato
     }
+
+
+ @Override
+ public void initialize(URL url, ResourceBundle resourceBundle) {
+  ResultSet rs = DB.qSelect("SELECT id, nome FROM biblioteche");
+
+  //scelta.getItems().add(0, "-- Seleziona Biblioteca --");
+  try {
+   while (rs.next()) {
+    System.out.println(rs.getInt("id"));
+    biblio.getItems().add(rs.getString("id") + " - " + rs.getString("nome") );
+   }
+  }catch (SQLException e){
+   throw new RuntimeException(e);
+  }
+ }
 }
