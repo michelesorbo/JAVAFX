@@ -66,7 +66,7 @@ public class AdminController implements Initializable {
   //scelta.getItems().add(0, "-- Seleziona Biblioteca --");
   try {
    while (rs.next()) {
-    System.out.println(rs.getInt("id"));
+    //System.out.println(rs.getInt("id"));
     biblio.getItems().add(rs.getString("id") + " - " + rs.getString("nome") );
    }
   }catch (SQLException e){
