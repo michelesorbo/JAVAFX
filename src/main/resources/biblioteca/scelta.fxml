@@ -4,9 +4,9 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioteca.sceltaController">
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioteca.sceltaController">
    <children>
-      <ChoiceBox fx:id="scelta" layoutX="225.0" layoutY="217.0" prefWidth="150.0" />
-      <Button layoutX="261.0" layoutY="274.0" mnemonicParsing="false" onAction="#getScelta" text="Button" />
+      <ChoiceBox fx:id="scelta" layoutX="28.0" layoutY="55.0" prefWidth="150.0" />
+      <Button layoutX="73.0" layoutY="100.0" mnemonicParsing="false" onAction="#getScelta" text="Button" />
    </children>
 </AnchorPane>

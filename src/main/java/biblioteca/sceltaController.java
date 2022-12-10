@@ -3,18 +3,34 @@ package biblioteca;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class sceltaController implements Initializable {
+public class sceltaController extends AnchorPane implements Initializable {
 
     @FXML
     private ChoiceBox<String> scelta;
+
+    public sceltaController(){
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("scelta.fxml"));
+
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+
+        try {
+            fxmlLoader.load();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 
 
     @Override

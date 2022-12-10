@@ -41,6 +41,7 @@ public class loginBibliotecarioController {
                    scene = new Scene(root);
                    stage.setScene(scene);
                    stage.setTitle("Bibliotecario Controller");
+                   stage.setResizable(false);
                    stage.show();
                } catch (IOException e) {
                    throw new RuntimeException(e);

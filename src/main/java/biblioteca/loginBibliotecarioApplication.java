@@ -12,6 +12,7 @@ public class loginBibliotecarioApplication extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("loginBibliotecario.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("Login");
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }
