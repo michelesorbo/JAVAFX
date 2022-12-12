@@ -10,4 +10,7 @@ module com.example.javafx {
 
     opens biblioteca to javafx.fxml;
     exports biblioteca;
+    exports ConfrontoDate;
+    opens ConfrontoDate to javafx.fxml;
+
 }
