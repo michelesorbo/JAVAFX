@@ -14,8 +14,9 @@
             <Font size="23.0" />
          </font>
       </Label>
-      <DatePicker fx:id="dataScelta" layoutX="206.0" layoutY="143.0" />
-      <Label fx:id="risultato" layoutX="276.0" layoutY="235.0" text="Risultato in gg" />
+      <DatePicker fx:id="dataScelta" layoutX="14.0" layoutY="144.0" />
+      <Label fx:id="risultato" layoutX="14.0" layoutY="241.0" prefHeight="17.0" prefWidth="571.0" text="Risultato in gg" textAlignment="CENTER" />
       <Button fx:id="btn" layoutX="407.0" layoutY="144.0" mnemonicParsing="false" onAction="#differenza" text="Button" />
+      <DatePicker fx:id="dataScelta2" layoutX="207.0" layoutY="144.0" />
    </children>
 </AnchorPane>
