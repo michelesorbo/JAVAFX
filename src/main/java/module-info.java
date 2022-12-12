@@ -1,6 +1,7 @@
 module com.example.javafx {
     requires javafx.controls;
     requires javafx.fxml;
+    requires org.joda.time;
 
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
