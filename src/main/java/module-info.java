@@ -14,4 +14,7 @@ module com.example.javafx {
     exports ConfrontoDate;
     opens ConfrontoDate to javafx.fxml;
 
+    opens ControlloWindow to javafx.fxml;
+    exports ControlloWindow;
+
 }
