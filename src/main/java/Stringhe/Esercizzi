@@ -1,0 +1,20 @@
+1)
+Contare quante vocali ci sono in una frase inserita in una casella di testo.
+
+2)
+Verificare se una frase è palindroma NON USARE IL METODO REVERSE
+
+3)
+Verificare se una parola inserita è palindroma (es: osso, anna). Controllare se viene inserita una sola parola.
+
+4)
+Poni tutte le iniziali di una frase in maiuscolo es: ciao a tutti, come state = Ciao A Tutti, Come State
+
+5)
+Leggi una stringa e verifica che non ci siano caratteri ripetuti in essa e stampare quale carattere viene ripetuto più volta
+
+6)
+Contare quanti carattere uguali e consecutivi ci sono in una stringa es Cooome Staai; o = 3 a = 2
+
+7)
+date 2 stringhe dire qunti caratteri hanno in comune.

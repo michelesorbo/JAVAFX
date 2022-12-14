@@ -17,4 +17,7 @@ module com.example.javafx {
     opens ControlloWindow to javafx.fxml;
     exports ControlloWindow;
 
+    opens Stringhe to javafx.fxml;
+    exports Stringhe;
+
 }
