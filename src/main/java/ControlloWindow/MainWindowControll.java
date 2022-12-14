@@ -15,6 +15,7 @@ public class MainWindowControll {
     }
 
     public void scenaDue() throws IOException{
-        bPane.setCenter(FXMLLoader.load(getClass().getResource("due.fxml")));
+        //bPane.setCenter(FXMLLoader.load(getClass().getResource("due.fxml")));
+        DueApplication due = new DueApplication();
     }
 }
