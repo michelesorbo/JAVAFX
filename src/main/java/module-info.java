@@ -20,4 +20,7 @@ module com.example.javafx {
     opens Stringhe to javafx.fxml;
     exports Stringhe;
 
+    opens Parcheggio to javafx.fxml;
+    exports Parcheggio;
+
 }

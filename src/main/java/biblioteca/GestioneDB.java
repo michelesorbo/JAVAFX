@@ -81,6 +81,17 @@ public class GestioneDB {
         return testo;
     }
 
+    public String firstLetterUp(String testo){
+        String[] parola = testo.split(" ");
+        String str_finale = "";
+        for (int i = 0; i < parola.length; i++) {
+            str_finale += parola[i].substring(0,1).toUpperCase() + parola[i].substring(1) + " ";
+        }
+
+        str_finale = str_finale.trim();
+        return str_finale;
+    }
+
     public String LoginBibliotecario(String user, String pwd){
         String matricola = "";
 
